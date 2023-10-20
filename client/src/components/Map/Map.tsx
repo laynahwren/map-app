@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl from 'mapbox-gl'
-import '../App.css'
+import './Map.css'
 
 // declare var process: {
 //     env: {
