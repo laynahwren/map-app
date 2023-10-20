@@ -10,7 +10,7 @@ import '../App.css'
 // }
 
 
-const Map = () => {
+const Map = (props) => {
     mapboxgl.accessToken = 'pk.eyJ1IjoibGF5bmFod3JlbiIsImEiOiJjbG55eTlpaWwwMm0wMnNyc3dnOTZ3MGVtIn0.NZjocPvkrGFUYNFfhGNKOA'
     const mapContainer = useRef(null)
     const map = useRef(null)
