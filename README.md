@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Map Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An application that leverages [MapBox](https://www.mapbox.com) and the [National Obesity by State dataset](https://catalog.data.gov/dataset/national-obesity-by-state-d765a) to display a map of the United States obesity percentages by state population. Data can be viewed in map form or table form.
 
-## Available Scripts
+## Menu
+- [Application Highlights](#application-highlights)
+- [Tech Stack](#tech-stack)
+- [Getting Started Locally](#getting-started-locally)
 
-In the project directory, you can run:
+## Application Highlights
 
-### `npm start`
+### Map View
+![Screenshot 2023-10-21 143727](https://github.com/laynahwren/map-app/assets/106330802/807f86d0-1605-4527-84ba-6ce3e90d61b7)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Map Interaction
+![Screenshot 2023-10-21 143949](https://github.com/laynahwren/map-app/assets/106330802/b16a9e9f-23b6-4415-b210-e26d98e5d198)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Table View Sorted by State
+![Screenshot 2023-10-21 144127](https://github.com/laynahwren/map-app/assets/106330802/d6dc5847-e3b7-414d-8c6c-de106f69085d)
 
-### `npm test`
+### Table View Sorted by Obesity
+![Screenshot 2023-10-21 145853](https://github.com/laynahwren/map-app/assets/106330802/eed410d6-f84a-44d3-b7ca-14c99182afed)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+### React
+I used `create-react-app` to create the application since it could all be done on the client side. React is the framework I have the strongest experience with, and leveraging `create-react-app` is a quick and simple way to get started with a basic single-page application such as this one. Using React allowed me to use `fetch` to get the necessary data. I was also able to use hooks like `useState` and `useEffect`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### JavaScript
+React uses JavaScript by default so the `App` component is written in JavaScript. This is also the language I have to most experience with.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### TypeScript
+I have limited experience with TypeScript, so I used it for my `Table` and `Map` components to get more familiar with the differences between it and JavaScript in the context of a React app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### CSS
+I often use frameworks for components and styling and wanted to create this application with plain CSS instead to get more practice with it.
 
-### `npm run eject`
+### HTML
+HTML is necessary for creating components for web applications.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### MapBox
+This was a requirement, and it was my first time using MapBox. I utilized the studio to create a custom map style and a tileset layer for the obesity geo data. I then integrated the custom map and added an interactive layer so that clicking on an individual state would show a popup with the obesity percentage for that state. The interactive layer is styled based on the percentages.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Open Folder
+The `map-app` folder contains all the necessary files and dependencies for running the application locally. Open in an IDE (I used VSCode).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Install
+Open a terminal and `cd` to the `map-app` directory. Run `npm install` to install all necessary modules.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Run
+Once everything is installed, run `npm start` in the same terminal. This will build the application and start it on [http://localhost:3000/](http://localhost:3000/)
