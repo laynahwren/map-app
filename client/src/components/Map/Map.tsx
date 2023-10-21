@@ -46,8 +46,7 @@ const Map = (props) => {
       console.log(e)
       new mapboxgl.Popup()
         .setLngLat(e.lngLat)
-        .setHTML(`State: ${e.features[0].properties.NAME}
-        Obesity: ${e.features[0].properties.Obesity}`)
+        .setHTML(setPopup(e.features[0].properties.NAME, e.features[0].properties.Obesity))
         .addTo(mapBox);
     })
 
@@ -61,8 +60,21 @@ const Map = (props) => {
 
   })
 
+  const setPopup = (name, obesity) => {
+    return (
+      `<div id='popupState'>${name}</div><div id='popupObesity'>Obesity: ${obesity}%</div>`
+    )
+  }
+
   return (
-    <div id='map' ref={mapContainer} />
+    <>
+      <div id='map' ref={mapContainer} />
+      <div className='legend'>
+        <div className='color-identifier' id='lowRange'></div>{'< 25'}
+        <div className='color-identifier' id='midRange'></div>{'< 30'}
+        <div className='color-identifier' id='highRange'></div>{'>= 30'}
+      </div>
+    </>
   );
 }
 

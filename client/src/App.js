@@ -14,18 +14,22 @@ function App() {
   }, [])
 
   const collectData = (currData) => {
-    setData(currData.map(item => { return { state: item.properties.NAME, obesity: item.properties.Obesity } }))
+    let collectedData = currData.map(item => { return { state: item.properties.NAME, obesity: item.properties.Obesity } })
+    setData(collectedData.sort((a, b) => a.state.localeCompare(b.state)))
   }
 
   return (
     <div className="App">
-      <div className='view-container'>
-        <div className='button-container'>
-          <button onClick={() => setView('map')}>Map</button>
-          <button onClick={() => setView('table')}>Table</button>
+      <div className='page-title'>Obesity Statistics by State</div>
+      <div className='page-content'>
+        <div className='view-container'>
+          <div className='button-container'>
+            <button onClick={() => setView('map')}>Map</button>
+            <button onClick={() => setView('table')}>Table</button>
+          </div>
+          {view === 'map' ? <Map data={data} /> :
+            <Table data={data} />}
         </div>
-        {view === 'map' ? <Map data={data} /> :
-          <Table data={data} />}
       </div>
     </div>
   );

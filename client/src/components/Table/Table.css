@@ -1,15 +1,41 @@
-table, th, td {
-    border:1px solid black;
-  }
+table,
+th,
+td {
+  border: 1px solid black;
+}
 
-  .table-container {
-    width: 100%;
-    height: 30rem;
-    overflow-y: scroll;
-  }
+.table-container {
+  width: 100%;
+  height: 30rem;
+  overflow-y: scroll;
+}
 
-  table {
-    width: 100%;
-  }
+table {
+  width: 100%;
+}
 
-  
+td, th {
+  padding: 0.25rem;
+}
+
+.obesity-stat {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sort-by {
+  position: absolute;
+  top: -1.5rem;
+}
+
+label {
+  font-size: 0.95rem;
+}
+
+#alphaSort {
+  margin-left: 0;
+}
+
+#dataSort {
+  margin-left: 0.75rem;
+}

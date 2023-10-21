@@ -1,13 +1,25 @@
 .App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+  display: grid;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.page-content {
+  justify-self: center;
+  align-self: center;
+  height: 100%;
+}
+
+.page-title {
+  justify-self: center;
+  margin-top: 2rem;
+  font-size: 2rem;
 }
 
 .view-container {
   height: fit-content;
   width: 50rem;
+  position: relative;
 }
 
 .button-container {
