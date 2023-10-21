@@ -12,7 +12,7 @@
 
 .page-title {
   justify-self: center;
-  align-self: flex-end;
+  align-self: center;
   font-size: 2rem;
 }
 
@@ -34,35 +34,33 @@
 }
 
 .separator {
-  justify-self: center;
   width: 15rem;
   background-color: rgb(41, 121, 1);
   height: 0.35rem;
-  align-self: center;
-  margin-bottom: 1rem;
+  margin: 0 auto;
+  margin-top: 0.75rem;
 }
 
 .button-container > button {
-  border: solid 2px rgb(126, 220, 246);
+  outline: solid 1px rgb(126, 220, 246);
   padding: 0.5rem;
   width: 5rem;
   background-color: rgb(205, 243, 254);
-}
-
-#mapBtn {
-  border-right: none;
+  border: none;
 }
 
 .button-container > button:hover {
   background-color: rgb(112, 185, 80);
-  border: 1px solid rgb(41, 121, 1);
+  outline: 1px solid rgb(41, 121, 1);
   cursor: pointer;
+  border: none;
 }
 
 .button-container > button:disabled {
   background-color: rgb(112, 185, 80);
-  border: 1px solid rgb(41, 121, 1);
+  outline: 1px solid rgb(41, 121, 1);
   cursor: pointer;
   color: black;
   cursor: default;
+  border: none;
 }

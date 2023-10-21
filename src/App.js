@@ -20,8 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='page-title'>Obesity Statistics by State</div>
-      <div className='separator' />
+      <div className='page-title'>Obesity Statistics by State<div className='separator' /></div>
       <div className='page-content'>
         <div className='view-container'>
           <div className='button-container'>
