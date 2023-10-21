@@ -1,17 +1,21 @@
-table,
-th,
-td {
-  border: 1px solid black;
-}
-
 .table-container {
   width: 100%;
-  height: 30rem;
+  height: 35rem;
   overflow-y: scroll;
+  border-bottom: solid 2px black;
 }
 
 table {
   width: 100%;
+  background: rgb(205, 243, 254);
+}
+
+thead {
+  background: #00CED1;
+}
+
+tbody tr:nth-child(even) {
+  background: rgb(126, 220, 246);
 }
 
 td, th {
@@ -25,7 +29,7 @@ td, th {
 
 .sort-by {
   position: absolute;
-  top: -1.5rem;
+  top: -1rem;
 }
 
 label {
@@ -38,4 +42,8 @@ label {
 
 #dataSort {
   margin-left: 0.75rem;
+}
+
+.sort-by-title {
+  margin-bottom: 0.25rem;
 }

@@ -21,14 +21,20 @@ function App() {
   return (
     <div className="App">
       <div className='page-title'>Obesity Statistics by State</div>
+      <div className='separator' />
       <div className='page-content'>
         <div className='view-container'>
           <div className='button-container'>
-            <button onClick={() => setView('map')}>Map</button>
-            <button onClick={() => setView('table')}>Table</button>
+            <button id='mapBtn' disabled={view === 'map'} onClick={() => setView('map')}>Map</button>
+            <button id='tableBtn' disabled={view === 'table'} onClick={() => setView('table')}>Table</button>
           </div>
-          {view === 'map' ? <Map data={data} /> :
+          {view === 'map' ? <Map /> :
             <Table data={data} />}
+        </div>
+        <div className='more-info'>
+          *More info can be found at:
+          <a href='https://catalog.data.gov/dataset/national-obesity-by-state-d765a' target='_blank' rel='noreferrer'>
+            https://catalog.data.gov/dataset/national-obesity-by-state-d765a</a>
         </div>
       </div>
     </div>

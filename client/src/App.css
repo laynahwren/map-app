@@ -12,13 +12,13 @@
 
 .page-title {
   justify-self: center;
-  margin-top: 2rem;
+  align-self: flex-end;
   font-size: 2rem;
 }
 
 .view-container {
   height: fit-content;
-  width: 50rem;
+  width: 60rem;
   position: relative;
 }
 
@@ -26,4 +26,43 @@
   display: flex;
   width: 100%;
   justify-content: flex-end;
+}
+
+.more-info {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.separator {
+  justify-self: center;
+  width: 15rem;
+  background-color: rgb(41, 121, 1);
+  height: 0.35rem;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+.button-container > button {
+  border: solid 2px rgb(126, 220, 246);
+  padding: 0.5rem;
+  width: 5rem;
+  background-color: rgb(205, 243, 254);
+}
+
+#mapBtn {
+  border-right: none;
+}
+
+.button-container > button:hover {
+  background-color: rgb(112, 185, 80);
+  border: 1px solid rgb(41, 121, 1);
+  cursor: pointer;
+}
+
+.button-container > button:disabled {
+  background-color: rgb(112, 185, 80);
+  border: 1px solid rgb(41, 121, 1);
+  cursor: pointer;
+  color: black;
+  cursor: default;
 }

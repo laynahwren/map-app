@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, FC } from 'react'
 import './Table.css'
 
-const Table = (props) => {
+const Table : FC = (props : { data : [{ state: string, obesity: number}]}) => {
     const [sorted, setSorted] = useState('alpha')
     const [sortedData, setSortedData] = useState(props.data)
 
@@ -18,7 +18,7 @@ const Table = (props) => {
     return (
         <>
             <div className='sort-by'>
-                <div>Sort By:</div>
+                <div className='sort-by-title'>Sort By:</div>
                 <input id='alphaSort' type='radio' checked={sorted === 'alpha'} onChange={setSort} value='alpha' />
                 <label htmlFor='alphaSort'>State (A-Z)</label>
                 <input id='dataSort' type='radio' checked={sorted === 'data'} onChange={setSort} value='data' />
