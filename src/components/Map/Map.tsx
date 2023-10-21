@@ -37,7 +37,6 @@ const Map : FC = () => {
     })
 
     mapBox.on('click', 'data-layer', (e) => {
-      console.log(e)
       new mapboxgl.Popup()
         .setLngLat(e.lngLat)
         .setHTML(setPopup(e.features[0].properties.NAME, e.features[0].properties.Obesity))
