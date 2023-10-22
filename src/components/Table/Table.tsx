@@ -2,9 +2,11 @@ import { useState, FC } from 'react'
 import './Table.css'
 
 const Table : FC = (props : { data : [{ state: string, obesity: number}]}) => {
+    // Set Table state
     const [sorted, setSorted] = useState('alpha')
     const [sortedData, setSortedData] = useState(props.data)
 
+    // Sort data based on user selection
     const setSort = (e) => {
         setSorted(e.target.value)
 

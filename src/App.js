@@ -4,15 +4,18 @@ import Map from './components/Map/Map'
 import Table from './components/Table/Table'
 
 function App() {
+  // Set App state
   const [data, setData] = useState([])
   const [view, setView] = useState('map')
 
+  // Fetch National Obesity Data by State when application loads
   useEffect(() => {
     fetch('https://services3.arcgis.com/HESxeTbDliKKvec2/arcgis/rest/services/LakeCounty_Health/FeatureServer/8/query?outFields=*&where=1%3D1&f=geojson')
       .then(response => response.json())
       .then(data => collectData(data.features))
   }, [])
 
+  // Parse data and set the data state
   const collectData = (currData) => {
     let collectedData = currData.map(item => { return { state: item.properties.NAME, obesity: item.properties.Obesity } })
     setData(collectedData.sort((a, b) => a.state.localeCompare(b.state)))

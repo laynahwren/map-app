@@ -5,10 +5,12 @@ import './Map.css'
 
 
 const Map : FC = () => {
+  // MapBox setup
   mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
   const mapContainer = useRef(null)
   const map = useRef(null)
 
+  // Set up the map parameters and render on page load
   useEffect(() => {
     if (map.current) return
     const mapBox = new mapboxgl.Map({
@@ -21,6 +23,7 @@ const Map : FC = () => {
 
     map.current = mapBox
 
+    // Add the interactive data layer to the map
     mapBox.on('load', () => {
       mapBox.addLayer({
         id: 'data-layer',
@@ -36,6 +39,7 @@ const Map : FC = () => {
       })
     })
 
+    // Set up click event to display data popup
     mapBox.on('click', 'data-layer', (e) => {
       new mapboxgl.Popup()
         .setLngLat(e.lngLat)
@@ -43,6 +47,7 @@ const Map : FC = () => {
         .addTo(mapBox);
     })
 
+    // Change cursor display when on interactive layer
     mapBox.on('mouseenter', 'data-layer', () => {
       mapBox.getCanvas().style.cursor = 'pointer';
     });
@@ -52,6 +57,7 @@ const Map : FC = () => {
     })
   })
 
+  // Return the popup element
   const setPopup = (name, obesity) => {
     return (
       `<div id='popupState'>${name}</div><div id='popupObesity'>Obesity: ${obesity}%</div>`
